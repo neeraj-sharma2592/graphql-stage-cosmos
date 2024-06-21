@@ -7,7 +7,7 @@ type Character {
     star: Star
 }
 
-type Planet @model(name:""PlanetAlias"") {
+type Planet @model(name:"PlanetAlias") {
     id : ID!,
     name : String,
     character: Character,
@@ -42,7 +42,7 @@ type Moon {
 type Earth {
     id : ID,
     name : String,
-    type: String @authorize(roles: [""authenticated""])
+    type: String @authorize(roles: ["authenticated"])
 }
 
 type Sun {
@@ -65,10 +65,10 @@ type MoonAdditionalAttribute {
 type MoreAttribute {
     id : ID,
     name : String,
-    type: String @authorize(roles: [""authenticated""])
+    type: String @authorize(roles: ["authenticated"])
 }
 
-type InvalidAuthModel @model @authorize(policy: ""Crater"") {
+type InvalidAuthModel @model @authorize(policy: "Crater") {
     id : ID!,
     name : String
 }
@@ -76,5 +76,5 @@ type InvalidAuthModel @model @authorize(policy: ""Crater"") {
 type PlanetAgain @model {
     id : ID,
     name : String,
-    type: String @authorize(roles: [""authenticated""])
+    type: String @authorize(roles: ["authenticated"])
 }
